@@ -1,0 +1,48 @@
+﻿@model FEBiblioteca.Models.PagosModel
+
+@{
+    ViewData["Title"] = "EliminarPagos";
+}
+
+<h1><img src="https://cdn-icons-png.flaticon.com/512/126/126230.png" alt="Logo" width="50" />
+    Eliminar Pagos</h1>
+
+
+<div>
+    <h4>Pagos</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id_pago)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id_pago)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id_reserva)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id_reserva)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Monto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Monto)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Fecha_pago)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Fecha_pago)
+        </dd>
+    </dl>
+
+    <form asp-action="EliminarPagos" asp-controller="Pagos" method="post">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a class="btn btn-warning" asp-action="Index">Volver a Lista</a>
+    </form>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

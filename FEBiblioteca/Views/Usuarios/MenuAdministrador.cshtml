@@ -1,0 +1,119 @@
+﻿@section noheader
+{
+    <h1> </h1>
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Home Hotel</title>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #dddddd;
+        }
+        header {
+            background-color: #f9f9f9; /* Fondo gris claro */
+            font-family: 'Times New Roman', Times, serif; /* Cambio de tipo de letra a Times New Roman */
+            color: #333333; /* Color de texto gris oscuro */
+            padding: 10px 0;
+        }
+
+        .navbar-brand {
+            color: #333333; /* Color del texto del enlace del logo */
+            font-weight: bold; /* Texto del logo en negrita */
+        }
+
+        .navbar-nav .nav-link {
+            color: #333333; /* Color del texto del enlace */
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: #555555; /* Color del texto del enlace al pasar el ratón */
+            }
+
+        .dropdown-menu {
+            background-color: #f9f9f9; /* Fondo gris claro para el menú desplegable */
+        }
+
+        .dropdown-item {
+            color: #333333; /* Color del texto del menú desplegable */
+        }
+
+            .dropdown-item:hover {
+                background-color: #dddddd; /* Fondo gris más claro al pasar el ratón */
+                color: #555555; /* Color del texto al pasar el ratón */
+            }
+        /*/////////////////////////////////*/
+        .container {
+            max-width: 800px; /* Ajusta el ancho máximo según tu diseño */
+            margin: 0 auto; /* Centra el contenedor horizontalmente */
+            font-family: 'Times New Roman', Times, serif; /* Cambia la fuente a Times New Roman */
+        }
+
+        h1 {
+            font-family: 'Times New Roman', Times, serif; /* Cambia la fuente del título */
+            color: #D4AF37; 
+            background-color: #dddddd;
+        }
+
+        img {
+            display: block; /* Asegura que la imagen sea un bloque */
+            margin: 0 auto; /* Centra la imagen horizontalmente */
+            max-width: 100%; /* Ajusta el ancho máximo de la imagen al contenedor */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Administrador</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://localhost:60890/">Cerrar Sesión</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Área Administradora
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-area="" asp-action="Index" asp-controller="Habitaciones">Habitación</a>
+                                <a class="dropdown-item" asp-area="" asp-action="Index" asp-controller="Reserva">Reserva</a>
+                                <a class="dropdown-item" asp-area="" asp-action="Index" asp-controller="Usuarios">Usuario</a>
+                                <a class="dropdown-item" asp-area="" asp-action="Index" asp-controller="Reportes">Reportes</a>
+                                <a class="dropdown-item" asp-area="" asp-action="Index" asp-controller="Pagos">Pagos</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <br />
+    <br />
+    <div class="container mt-4">
+        <!-- Contenido de la página -->
+        <h1>Bienvenido al área administradora del hotel</h1>
+        <img src="~/logo2.jpg" />
+
+
+    </div>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

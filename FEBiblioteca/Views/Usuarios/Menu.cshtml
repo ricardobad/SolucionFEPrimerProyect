@@ -1,0 +1,143 @@
+﻿@section noheader
+{
+
+}@{
+    ViewData["Title"] = "Inicio Hotel";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Inicio Hotel</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #2c3e50;
+        }
+
+        .navbar {
+            background-color: #2c3e50;
+            color: #ffffff; 
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #9460E5;
+        }
+
+        .container {
+            background-color: #ffffff; 
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        p {
+            color: #312F34;
+        }
+
+        .hotel-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Módulo Recepcionista</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://localhost:60890/">Cerrar Sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-action="CrearReserva" asp-controller="Reserva">Agregar Reserva</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-action="ModificarReservaa" asp-controller="Reserva">Modificar Reserva</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-action="EliminarReservaa" asp-controller="Reserva">Eliminar Reserva</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Hotel Bed & Breakfast</h1>
+                <p>Bienvenido al Hotel Bed & Breakfast, nuestro hotel podrá encontrar habitaciones a un precio cómodo y una magnífica experiencia,
+                    ofrecemos el equipamiento y los servicios más lujosos en nuestras maravillosas habitaciones.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+
+                <img src="~/hotel.png" alt="Hotel" class="hotel-image" />
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    
+                    <img src="~/habitacio.png"alt="Habitación" class="card-img-top"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Habitaciones deluxe</h5>
+                        <p class="card-text">Descansa en nuestras cómodas habitaciones de lujo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    
+                    <img src="~/piscina.png" alt="Piscina" class="card-img-top" /> 
+                    <div class="card-body">
+                        <h5 class="card-title">Habitaciones ejecutivas</h5>
+                        <p class="card-text">Habitaciones ideales para trabajar con todas las comodidades.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    
+                    <img src="~/img.png" alt="Restaurante" class="card-img-top"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Habitaciones estandar</h5>
+                        <p class="card-text">Habitaciones clásicas para una estancia agradable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

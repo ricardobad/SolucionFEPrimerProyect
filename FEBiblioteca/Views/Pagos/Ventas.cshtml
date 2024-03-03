@@ -1,0 +1,101 @@
+﻿@model FEBiblioteca.Models.PagosModel
+
+@section noheader{
+    <h1></h1>
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Monto Total - Hotel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #2c3e50;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-family: 'Times New Roman', Times, serif;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.0rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            background-color: lightslategrey;
+        }
+
+            .btn:hover {
+                background-color: #0056b3;
+            }
+
+        .btn-crear {
+            background-color: #28a745;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Consulta de monto por fechas</h1>
+  
+    <div class="form-container">
+
+        <form action="/Pagos/VerMontoTotal" method="get">
+            <div class="form-group">
+                <label for="fechaInicio">Fecha de Inicio:</label>
+                <input type="date" name="Fecha_pago" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fechaFin">Fecha de Fin:</label>
+                <input type="date" name="Fecha_Fin" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Consultar" class="btn btn-primary">
+                <a class="btn btn-primary" asp-action="Index" asp-controller="Pagos">Regresar</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

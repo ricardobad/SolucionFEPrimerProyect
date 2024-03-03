@@ -1,0 +1,33 @@
+﻿@model FEBiblioteca.Models.ReportesModel
+@{
+    ViewData["Title"] = "EliminarReportes";
+}
+
+<h1>
+    <img src="https://cdn-icons-png.flaticon.com/512/841/841791.png" alt="Logo" width="50">
+    Eliminar Reportes
+</h1>
+
+<div>
+    <h4>Reportes</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.id_reporte)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.id_reporte)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Reporte)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Reporte)
+        </dd>
+    </dl>
+
+    <form asp-action="EliminarReportes">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a class="btn btn-warning" asp-action="Index">Volver a Lista</a>
+    </form>
+</div>

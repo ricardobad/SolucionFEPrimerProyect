@@ -1,0 +1,145 @@
+﻿@model IEnumerable<FEBiblioteca.Models.HabitacionesModel>
+
+@{
+    ViewData["Title"] = "ConsultarHabitacionOcupada";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        /* Agrega estilos CSS aquí según tus necesidades */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50; /* Update background color */
+            color: #ecf0f1; /* Text color */
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #ecf0f1; /* Text color */
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            color: #2c3e50; /* Text color */
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .btn-crear {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Consultar Habitacion Ocupada</h1>
+
+    <center>
+        <h2>Seleccione si desea ver las habitaciones disponibles</h2>
+        <hr />
+        @foreach (var item in Model)
+        {
+            bool estaOcupado = item.Ocupado;
+            <form action="ConsultarHabitacionOcupada" method="post">
+                <!-- ... Otros campos del formulario ... -->
+                <input id="Radio1" type="radio" name="Ocupado" value="true" /> Ocupado
+                <input id="Radio2" type="radio" name="Ocupado" value="" /> No Ocupado
+                <!-- ... Otros campos del formulario ... -->
+                <button type="submit">Seleccionar</button>
+            </form>
+        }
+    </center>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id_habitacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Numero_habitacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tipo_habitacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ocupado)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id_habitacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Numero_habitacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tipo_habitacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ocupado)
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p>
+        <a class="btn btn-crear" asp-action="Index" asp-controller="Habitaciones">Regresar al Inicio</a>
+    </p>
+
+    @section Scripts{
+        <script>
+            // Capturamos el elemento radio por su id
+            const radioElement = document.getElementById('Radio1');
+
+            // Agregamos un evento 'change' para detectar cuando el radio button cambia de estado
+            radioElement.addEventListener('change', function () {
+                // Verificamos si el radio button está marcado o no
+                const estaOcupado = radioElement.checked;
+
+                // Hacemos algo con el valor capturado, por ejemplo, mostrarlo en la consola
+                console.log('El radio button está marcado:', estaOcupado);
+            });
+        </script>
+    }
+</body>
+</html>

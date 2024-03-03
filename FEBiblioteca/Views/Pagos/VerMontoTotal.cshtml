@@ -1,0 +1,120 @@
+﻿@model IEnumerable<FEBiblioteca.Models.PagosModel>
+
+@section noheader{
+    <h1></h1>
+}
+
+@{
+    ViewData["Title"] = "VerMontoTotal";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Monto Total - Hotel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffc107;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+            a:hover {
+                background-color: #ff9800;
+            }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Times New Roman', Times, serif; /* Tipo de letra Times New Roman */
+            background-color: whitesmoke; /* Fondo gris más claro */
+            color: #333333; /* Color de texto gris oscuro */
+            padding: 10px; /* Añade espacio interno */
+            text-align: center; /* Centra el texto */
+            border-bottom: 2px solid #aaaaaa; /* Añade una línea inferior */
+        }
+
+            .table th,
+            .table td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .table th {
+                background-color: #f2f2f2;
+                text-align: left;
+            }
+
+            .table td {
+                text-align: center;
+            }
+
+        .btn-crear {
+            background-color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ver Monto Total</h1>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Monto
+                </th>
+                <th>
+                    Fecha de Pago
+                </th>
+                <th>
+                    Fecha de Fin
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Total)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha_pago)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha_Fin)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <p>
+        <a class="btn btn-primary"asp-action="Ventas" asp-controller="Pagos">Regresar</a>
+    </p>
+</body>
+</html>
